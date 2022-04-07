@@ -12,7 +12,7 @@ class LaporanAplikasi extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Laporan Aplikasi';
-        $data['aplikasi'] = $this->LaporanAplikasi_model->getAllLaporanAplikasi();
+        $data['aplikasimasuk'] = $this->LaporanAplikasi_model->getAllLaporanAplikasi();
 
         $this->load->view('templates/Header', $data);
         $this->load->view('laporanaplikasi/Laporanaplikasi_vw', $data);

@@ -5,9 +5,9 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">mark_email_unread</i>
+                            <i class="material-icons">shopping_bag</i>
                         </div>
-                        <p class="card-category">Surat Masuk</p>
+                        <p class="card-category">Aplikasi Masuk</p>
                         <h3 class="card-title">21</h3>
                     </div>
                     <div class="card-footer">
@@ -19,9 +19,9 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-success card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">drafts</i>
+                            <i class="material-icons">local_mall</i>
                         </div>
-                        <p class="card-category">Surat Keluar</p>
+                        <p class="card-category">Aplikasi Keluar</p>
                         <h3 class="card-title">30</h3>
                     </div>
                     <div class="card-footer">
@@ -32,9 +32,9 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-danger card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">move_to_inbox</i>
+                            <i class="material-icons">assignment</i>
                         </div>
-                        <p class="card-category">Arsip</p>
+                        <p class="card-category">Laporan Aplikasi</p>
                         <h3 class="card-title">75</h3>
                     </div>
                     <div class="card-footer">
@@ -78,7 +78,7 @@
                         <div class="ct-chart" id="websiteViewsChart"></div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Surat Masuk</h4>
+                        <h4 class="card-title">Aplikasi Masuk</h4>
                         <p class="card-category">Jumlah Surat Masuk Setiap Bulan</p>
                     </div>
                     <div class="card-footer">
@@ -94,7 +94,7 @@
                         <div class="ct-chart" id="completedTasksChart"></div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Surat Keluar</h4>
+                        <h4 class="card-title">Aplikasi Keluar</h4>
                         <p class="card-category">Jumlah Surat Keluar Setiap Bulan</p>
                     </div>
                     <div class="card-footer">

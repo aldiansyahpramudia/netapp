@@ -34,7 +34,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($aplikasi as $lap) : ?>
+                        <?php foreach ($aplikasimasuk as $lap) : ?>
                             <?php if ($lap['status'] == "Sedang Diproses") { ?>
                                 <tr>
                                     <td><?= $lap['kode_aplikasi']; ?></td>

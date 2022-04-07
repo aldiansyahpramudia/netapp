@@ -6,6 +6,7 @@
                     <table class="table table-shopping">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Aplikasi</th>
                                 <th>Nama Aplikasi</th>
                                 <th>Kategori</th>
@@ -14,69 +15,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">
-                                    <div class="img-container">
-                                        <img src="<?= base_url() ?>assets/img/gambar1.jpg" rel="nofollow" alt="...">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>APLIKASI TES</h4>
-                                </td>
-                                <td>
-                                    EDUCATION
-                                </td>
-                                <td>
-                                    Rp.20.000
-                                </td>
-                                <td class="td-actions text-right">
-                                    <a href="" class="btn btn-success">
-                                        <i class="material-icons">add_shopping_cart</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                    <div class="img-container">
-                                        <img src="<?= base_url() ?>assets/img/gambar1.jpg" rel="nofollow" alt="...">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>APLIKASI TES</h4>
-                                </td>
-                                <td>
-                                    EDUCATION
-                                </td>
-                                <td>
-                                    Rp.20.000
-                                </td>
-                                <td class="td-actions text-right">
-                                    <a href="" class="btn btn-success">
-                                        <i class="material-icons">add_shopping_cart</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                    <div class="img-container">
-                                        <img src="<?= base_url() ?>assets/img/gambar1.jpg" rel="nofollow" alt="...">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>APLIKASI TES</h4>
-                                </td>
-                                <td>
-                                    EDUCATION
-                                </td>
-                                <td>
-                                    Rp.20.000
-                                </td>
-                                <td class="td-actions text-right">
-                                    <a href="" class="btn btn-success">
-                                        <i class="material-icons">add_shopping_cart</i>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php $i = 1; ?>
+                            <?php foreach ($aplikasi as $app) : ?>
+                                <tr>
+                                    <td class="text-center"><?= $i; ?></td>
+                                    <td>
+                                        <div class="img-container">
+                                            <img src="<?= base_url() ?>uploads/<?= $app['gambar']; ?>" rel="nofollow" alt="...">
+                                        </div>
+                                    </td>
+                                    <td><?= $app['nama_aplikasi']; ?></td>
+                                    <td><?= $app['kategori']; ?></td>
+                                    <td><?= $app['harga']; ?></td>
+                                    <td class="td-actions text-right">
+                                        <a href="<?= base_url() ?>suratmasuk/edit/<?= $app['kode_aplikasi']; ?>" class="btn btn-success">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="<?= base_url() ?>suratmasuk/hapus/<?= $app['kode_aplikasi']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data surat?');">
+                                            <i class="material-icons">delete</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

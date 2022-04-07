@@ -3,7 +3,7 @@
         <?= $this->session->flashdata('message'); ?>
         <div class="card mt-0">
             <div class="card-body">
-                <?= form_open_multipart('aplikasi/tambah'); ?>
+                <?= form_open_multipart('aplikasi/Tambah'); ?>
                 <div class="form-row p-2">
                     <div class="form-group col-md-6">
                         <label for="nama_aplikasi">Nama Aplikasi</label>
@@ -24,10 +24,10 @@
                     </div>
                 </div>
                 <div class="form-row p-2">
-                    <label for="file_surat">Upload Gambar Aplikasi</label>
+                    <label for="gambar">Upload Gambar Aplikasi</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="file_surat" name="file_surat">
-                        <label class=" custom-file-label" for="file_surat">Choose file</label>
+                        <input type="file" class="custom-file-input" id="gambar" name="gambar">
+                        <label class=" custom-file-label" for="gambar">Choose file</label>
                     </div>
                 </div>
                 <div class="modal-footer">
