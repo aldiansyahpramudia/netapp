@@ -36,22 +36,27 @@
                     </thead>
                     <tbody>
                         <?php $i = 1; ?>
-                        <?php foreach ($aplikasimasuk as $apm) : ?>
-                            <tr>
-                                <td class="text-center"><?= $i; ?></td>
-                                <td><?= $apm['kode_aplikasi']; ?></td>
-                                <td><?= $apm['nama_aplikasi']; ?></td>
-                                <td><?= $apm['kategori']; ?></td>
-                                <td><?= $apm['pengorder']; ?></td>
-                                <td><?= $apm['tgl_order']; ?></td>
-                                <td><?= $apm['status']; ?></td>
-                                <td class="td-actions text-right">
-                                    <a href="" class="btn btn-warning">
-                                        <i class="material-icons">move_to_inbox</i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <?php $i++; ?>
+                        <?php foreach ($aplikasitransaksi as $apm) : ?>
+                            <?php if ($apm['status'] == "Proses Pembuatan") { ?>
+                                <tr>
+                                    <td class="text-center"><?= $i; ?></td>
+                                    <td><?= $apm['kode_aplikasi']; ?></td>
+                                    <td><?= $apm['nama_aplikasi']; ?></td>
+                                    <td><?= $apm['kategori']; ?></td>
+                                    <td><?= $apm['pengorder']; ?></td>
+                                    <td><?= date('d F Y', $apm['tgl_order']); ?></td>
+                                    <td><span class="badge badge-info"><?= $apm['status']; ?></span></td>
+                                    <td class="td-actions text-right">
+                                        <a href="<?= base_url() ?>aplikasimasuk/detail/<?= $apm['id_order']; ?>" class="btn btn-info">
+                                            <i class="material-icons">view_list</i>
+                                        </a>
+                                        <a href="<?= base_url() ?>aplikasimasuk/selesai/<?= $apm['id_order']; ?>" class="btn btn-success">
+                                            <i class="material-icons">fact_check</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php } ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

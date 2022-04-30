@@ -1,5 +1,6 @@
 <div class="content">
     <div class="container-fluid">
+        <?= $this->session->flashdata('message'); ?>
         <div class="table-responsive">
             <div class="card">
                 <div class="card-body">
@@ -28,11 +29,8 @@
                                     <td><?= $app['kategori']; ?></td>
                                     <td><?= $app['harga']; ?></td>
                                     <td class="td-actions text-right">
-                                        <a href="<?= base_url() ?>suratmasuk/edit/<?= $app['kode_aplikasi']; ?>" class="btn btn-success">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <a href="<?= base_url() ?>suratmasuk/hapus/<?= $app['kode_aplikasi']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data surat?');">
-                                            <i class="material-icons">delete</i>
+                                        <a href="<?= base_url() ?>orderaplikasi/order/<?= $app['kode_aplikasi']; ?>" class="btn btn-success">
+                                            <i class="material-icons">add_shopping_cart</i>
                                         </a>
                                     </td>
                                 </tr>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AplikasiKeluar extends CI_Controller
+class RiwayatTransaksi extends CI_Controller
 {
     public function __construct()
     {
@@ -15,23 +15,22 @@ class AplikasiKeluar extends CI_Controller
     public function index()
     {
         $data['users'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-        $data['judul'] = 'Aplikasi Keluar';
+        $data['judul'] = 'Riwayat Transaksi';
         $data['aplikasitransaksi'] = $this->AplikasiTransaksi_model->getAllAplikasiTransaksi();
 
         $this->load->view('templates/Header', $data);
-        $this->load->view('aplikasikeluar/Aplikasikeluar_vw', $data);
+        $this->load->view('riwayattransaksi/Riwayattransaksi_vw', $data);
         $this->load->view('templates/Footer');
     }
 
-    public function detail($id_order)
+    public function proses($id_order)
     {
-        $data['users'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-        $data['aplikasitransaksi'] = $this->AplikasiTransaksi_model->getAplikasiTransaksiById($id_order);
-
-        $data['judul'] = 'Detail Aplikasi Keluar';
-
-        $this->load->view('templates/Header', $data);
-        $this->load->view('aplikasikeluar/Detail', $data);
-        $this->load->view('templates/Footer');
+        $this->AplikasiTransaksi_model->prosesAplikasi($id_order);
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Applikasi !
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
+        redirect('riwayattransaksi');
     }
 }

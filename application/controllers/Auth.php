@@ -44,7 +44,7 @@ class Auth extends CI_Controller
                 $this->session->set_userdata($data);
 
                 if ($users['role_id'] == 'Member') {
-                    redirect('pengajuansurat');
+                    redirect('orderaplikasi');
                 } else {
                     redirect('dashboard');
                 }
@@ -72,6 +72,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[5]|matches[password2]');
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[5]|matches[password1]');
+        $this->form_validation->set_rules('no_hp', 'Nomor Handphone', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Register Account';
@@ -83,6 +84,7 @@ class Auth extends CI_Controller
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+                'no_hp' => $this->input->post('no_hp', true),
                 'role_id' => "Member"
             ];
 

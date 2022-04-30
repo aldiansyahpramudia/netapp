@@ -28,23 +28,41 @@
                             <th>Kode Aplikasi</th>
                             <th>Nama Aplikasi</th>
                             <th>Kategori</th>
-                            <th>Pengorder</th>
+                            <th>Pembayaran</th>
+                            <th>Tanggal Order</th>
                             <th>Status</th>
                             <th class="text-right">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($aplikasimasuk as $lap) : ?>
-                            <?php if ($lap['status'] == "Sedang Diproses") { ?>
+                        <?php foreach ($aplikasitransaksi as $tss) : ?>
+                            <?php if ($tss['id_user'] == $users['id_user']) { ?>
                                 <tr>
-                                    <td><?= $lap['kode_aplikasi']; ?></td>
-                                    <td><?= $lap['nama_aplikasi']; ?></td>
-                                    <td><?= $lap['kategori']; ?></td>
-                                    <td><?= $lap['pengorder']; ?></td>
-                                    <td><span class="badge badge-warning"><?= $lap['status']; ?></span></td>
+                                    <td><?= $tss['kode_aplikasi']; ?></td>
+                                    <td><?= $tss['nama_aplikasi']; ?></td>
+                                    <td><?= $tss['kategori']; ?></td>
+                                    <td><?= $tss['pembayaran']; ?></td>
+                                    <td><?= date('d F Y', $tss['tgl_order']); ?></td>
+                                    <td>
+                                        <?php
+                                        if ($tss['status'] == 'Proses Pembayaran') {
+                                        ?>
+                                            <span class="badge badge-warning"><?= $tss['status']; ?></span>
+                                        <?php
+                                        } else if ($tss['status'] == 'Proses Pembuatan') {
+                                        ?>
+                                            <span class="badge badge-info"><?= $tss['status']; ?></span>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <span class="badge badge-success"><?= $tss['status']; ?></span>
+                                        <?php
+                                        }
+                                        ?>
+                                    </td>
                                     <td class="td-actions text-right">
-                                        <a href="<?= base_url() ?>laporanaplikasi/proses/<?= $lap['id_pengajuan']; ?>" class="btn btn-success">
-                                            <i class="material-icons">fact_check</i>
+                                        <a href="<?= base_url() ?>riwayatorder/detail/<?= $tss['id_order']; ?>" class="btn btn-info">
+                                            <i class="material-icons">view_list</i>
                                         </a>
                                     </td>
                                 </tr>

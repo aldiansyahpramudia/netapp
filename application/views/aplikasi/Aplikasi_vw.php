@@ -48,8 +48,14 @@
                                 <td><?= $app['kategori']; ?></td>
                                 <td><?= $app['harga']; ?></td>
                                 <td class="td-actions text-right">
-                                    <a href="" class="btn btn-warning">
+                                    <a href="<?= base_url() ?>aplikasi/edit/<?= $app['kode_aplikasi']; ?>" class="btn btn-success">
                                         <i class="material-icons">edit</i>
+                                    </a>
+                                    <a href="<?= base_url() ?>aplikasi/detail/<?= $app['kode_aplikasi']; ?>" class="btn btn-info">
+                                        <i class="material-icons">view_list</i>
+                                    </a>
+                                    <a href="<?= base_url() ?>aplikasi/hapus/<?= $app['kode_aplikasi']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus aplikasi?');">
+                                        <i class="material-icons">delete</i>
                                     </a>
                                 </td>
                             </tr>

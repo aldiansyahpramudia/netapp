@@ -59,15 +59,21 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>laporanpengajuan/riwayat">
+            <a class="nav-link" href="<?= base_url() ?>riwayattransaksi">
               <i class="material-icons">payments</i>
               <p>Riwayat Transaksi</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>laporanaplikasi">
+            <a class="nav-link" href="<?= base_url() ?>riwayatorder">
+              <i class="material-icons">payments</i>
+              <p>Riwayat Order</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?= base_url() ?>kelolauser">
               <i class="material-icons">assignment</i>
-              <p>Laporan Aplikasi</p>
+              <p>Kelola User</p>
             </a>
           </li>
         </ul>

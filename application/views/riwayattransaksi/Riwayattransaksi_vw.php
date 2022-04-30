@@ -1,9 +1,10 @@
 <div class="content">
     <div class="container-fluid">
+        <?= $this->session->flashdata('message'); ?>
         <div class="card">
-            <div class="card-header card-header-icon card-header-rose">
-                <div class="card-icon">
-                    <i class="material-icons">local_mall</i>
+            <div class="card-header card-header-text card-header-primary">
+                <div class="card-text">
+                    <h4 class="card-title">Aplikasi Dalam Proses</h4>
                 </div>
             </div>
             <div class="card-body">
@@ -24,42 +25,36 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">No</th>
                             <th>Kode Aplikasi</th>
                             <th>Nama Aplikasi</th>
                             <th>Kategori</th>
                             <th>Pengorder</th>
+                            <th>Pembayaran</th>
                             <th>Tanggal Order</th>
-                            <th>Tanggal Diterima</th>
                             <th>Status</th>
                             <th class="text-right">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $i = 1; ?>
-                        <?php foreach ($aplikasitransaksi as $apk) : ?>
-                            <?php if ($apk['status'] == "Selesai") { ?>
+                        <?php foreach ($aplikasitransaksi as $tss) : ?>
+                            <?php if ($tss['status'] == "Proses Pembayaran") { ?>
                                 <tr>
-                                    <td class="text-center"><?= $i; ?></td>
-                                    <td><?= $apk['kode_aplikasi']; ?></td>
-                                    <td><?= $apk['nama_aplikasi']; ?></td>
-                                    <td><?= $apk['kategori']; ?></td>
-                                    <td><?= $apk['pengorder']; ?></td>
-                                    <td><?= date('d F Y', $apk['tgl_order']); ?></td>
-                                    <td><?= date('d F Y', $apk['tgl_diterima']); ?></td>
-                                    <td><span class="badge badge-success"><?= $apk['status']; ?></span></td>
+                                    <td><?= $tss['kode_aplikasi']; ?></td>
+                                    <td><?= $tss['nama_aplikasi']; ?></td>
+                                    <td><?= $tss['kategori']; ?></td>
+                                    <td><?= $tss['pengorder']; ?></td>
+                                    <td><?= $tss['pembayaran']; ?></td>
+                                    <td><?= date('d F Y', $tss['tgl_order']); ?></td>
+                                    <td><span class="badge badge-warning"><?= $tss['status']; ?></span></td>
                                     <td class="td-actions text-right">
-                                        <a href="<?= base_url() ?>aplikasikeluar/detail/<?= $apk['id_order']; ?>" class="btn btn-info">
-                                            <i class="material-icons">view_list</i>
+                                        <a href="<?= base_url() ?>riwayattransaksi/proses/<?= $tss['id_order']; ?>" class="btn btn-success">
+                                            <i class="material-icons">fact_check</i>
                                         </a>
                                     </td>
                                 </tr>
-                                <?php $i++; ?>
                             <?php } ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
-</div>

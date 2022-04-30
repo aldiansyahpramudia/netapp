@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AplikasiKeluar extends CI_Controller
+class RiwayatOrder extends CI_Controller
 {
     public function __construct()
     {
@@ -15,11 +15,11 @@ class AplikasiKeluar extends CI_Controller
     public function index()
     {
         $data['users'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-        $data['judul'] = 'Aplikasi Keluar';
+        $data['judul'] = 'Riwayat Order';
         $data['aplikasitransaksi'] = $this->AplikasiTransaksi_model->getAllAplikasiTransaksi();
 
         $this->load->view('templates/Header', $data);
-        $this->load->view('aplikasikeluar/Aplikasikeluar_vw', $data);
+        $this->load->view('riwayatorder/Riwayatorder_vw', $data);
         $this->load->view('templates/Footer');
     }
 
@@ -28,10 +28,10 @@ class AplikasiKeluar extends CI_Controller
         $data['users'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data['aplikasitransaksi'] = $this->AplikasiTransaksi_model->getAplikasiTransaksiById($id_order);
 
-        $data['judul'] = 'Detail Aplikasi Keluar';
+        $data['judul'] = 'Detail Order';
 
         $this->load->view('templates/Header', $data);
-        $this->load->view('aplikasikeluar/Detail', $data);
+        $this->load->view('aplikasimasuk/Detail', $data);
         $this->load->view('templates/Footer');
     }
 }
