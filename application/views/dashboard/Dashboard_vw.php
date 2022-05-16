@@ -79,7 +79,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Aplikasi Masuk</h4>
-                        <p class="card-category">Jumlah Surat Masuk Setiap Bulan</p>
+                        <p class="card-category">Jumlah Aplikasi Masuk Setiap Bulan</p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Aplikasi Keluar</h4>
-                        <p class="card-category">Jumlah Surat Keluar Setiap Bulan</p>
+                        <p class="card-category">Jumlah Aplikasi Keluar Setiap Bulan</p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
