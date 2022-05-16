@@ -8,7 +8,7 @@
                             <i class="material-icons">shopping_bag</i>
                         </div>
                         <p class="card-category">Aplikasi Masuk</p>
-                        <h3 class="card-title">21</h3>
+                        <h3 class="card-title"></h3>
                     </div>
                     <div class="card-footer">
 
@@ -22,7 +22,7 @@
                             <i class="material-icons">local_mall</i>
                         </div>
                         <p class="card-category">Aplikasi Keluar</p>
-                        <h3 class="card-title">30</h3>
+                        <h3 class="card-title"></h3>
                     </div>
                     <div class="card-footer">
                     </div>
@@ -34,8 +34,8 @@
                         <div class="card-icon">
                             <i class="material-icons">assignment</i>
                         </div>
-                        <p class="card-category">Laporan Aplikasi</p>
-                        <h3 class="card-title">75</h3>
+                        <p class="card-category">Jumlah Transaksi</p>
+                        <h3 class="card-title"><?= $jml_transaksi ?></h3>
                     </div>
                     <div class="card-footer">
                     </div>
@@ -48,7 +48,7 @@
                             <i class="material-icons">group</i>
                         </div>
                         <p class="card-category">Pengguna</p>
-                        <h3 class="card-title">245</h3>
+                        <h3 class="card-title"><?= $jml_users ?></h3>
                     </div>
                     <div class="card-footer">
                     </div>

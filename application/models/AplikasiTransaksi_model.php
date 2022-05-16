@@ -53,4 +53,9 @@ class AplikasiTransaksi_model extends CI_Model
         $this->db->where('id_order', $id_order);
         $this->db->update('aplikasitransaksi', $data);
     }
+
+    public function jumlahTransaksi()
+    {
+        return $this->db->get('aplikasitransaksi')->num_rows();
+    }
 }

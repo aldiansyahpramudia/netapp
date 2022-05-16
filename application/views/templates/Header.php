@@ -28,52 +28,79 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>dashboard">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>aplikasi">
-              <i class="material-icons">widgets</i>
-              <p>Aplikasi</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>aplikasimasuk">
-              <i class="material-icons">shopping_bag</i>
-              <p>Aplikasi Masuk</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>aplikasikeluar">
-              <i class="material-icons">local_mall</i>
-              <p>Aplikasi Keluar</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>orderaplikasi">
-              <i class="material-icons">shopping_cart</i>
-              <p>Order Aplikasi</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>riwayattransaksi">
-              <i class="material-icons">payments</i>
-              <p>Riwayat Transaksi</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>riwayatorder">
-              <i class="material-icons">payments</i>
-              <p>Riwayat Order</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?= base_url() ?>kelolauser">
-              <i class="material-icons">assignment</i>
-              <p>Kelola User</p>
+          <?php
+          if ($users['role_id'] == 'Admin') {
+          ?>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>dashboard">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>aplikasi">
+                <i class="material-icons">widgets</i>
+                <p>Aplikasi</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>aplikasimasuk">
+                <i class="material-icons">shopping_bag</i>
+                <p>Aplikasi Masuk</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>aplikasikeluar">
+                <i class="material-icons">local_mall</i>
+                <p>Aplikasi Keluar</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>riwayattransaksi">
+                <i class="material-icons">payments</i>
+                <p>Riwayat Transaksi</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>kelolauser">
+                <i class="material-icons">assignment</i>
+                <p>Kelola User</p>
+              </a>
+            </li>
+          <?php
+          } else {
+          ?>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>orderaplikasi">
+                <i class="material-icons">shopping_cart</i>
+                <p>Order Aplikasi</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>riwayatorder">
+                <i class="material-icons">payments</i>
+                <p>Riwayat Order</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>profile">
+                <i class="material-icons">person</i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<?= base_url() ?>about">
+                <i class="material-icons">webhook</i>
+                <p>About</p>
+              </a>
+            </li>
+          <?php
+          }
+          ?>
+          <li class="nav-item " data-toggle="modal" data-target="#logoutModal">
+            <a class="nav-link">
+              <i class="material-icons">logout</i>
+              <p>Logout</p>
             </a>
           </li>
         </ul>

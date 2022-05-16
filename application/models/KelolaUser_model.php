@@ -7,25 +7,26 @@ class KelolaUser_model extends CI_Model
         return $this->db->get('users')->result_array();
     }
 
-    public function getUsersById($id)
+    public function getUsersById($id_user)
     {
-        return $data['users'] = $this->db->get_where('users', ['id' => $id])->row_array();
+        return $data['users'] = $this->db->get_where('users', ['id_user' => $id_user])->row_array();
     }
 
-    public function hapusUser($id)
+    public function hapusUser($id_user)
     {
-        return $this->db->delete('users', ['id' => $id]);
+        return $this->db->delete('users', ['id_user' => $id_user]);
     }
 
-    public function editKelolaUser($id)
+    public function editKelolaUser($id_user)
     {
         $data = [
             "nama" => $this->input->post('nama', true),
             "email" => $this->input->post('email', true),
-            "role_id" => $this->input->post('role_id', true)
+            "alamat" => $this->input->post('alamat', true),
+            "no_hp" => $this->input->post('no_hp', true)
         ];
 
-        $this->db->where('id', $id);
+        $this->db->where('id_user', $id_user);
         $this->db->update('users', $data);
     }
 
